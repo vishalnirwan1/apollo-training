@@ -1,0 +1,12 @@
+type Data {
+    id: ID,
+    record:[profile]
+}
+type allTrainee {
+    status: String
+    message: String
+    data: [Data]
+}
+type Query {
+    getTrainee: allTrainee
+}
