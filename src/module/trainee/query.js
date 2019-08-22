@@ -1,6 +1,7 @@
+// import { RESTDataSource } from 'apollo-datasource-rest'
 const Query = {
-    getTrainee: (parent, args, context) => {
-        return null;
+    getTrainee: async (parent, args, { dataSource }) => {
+        return await dataSource.TraineeApi.getTrainee();
     }
 }
 export default Query;
