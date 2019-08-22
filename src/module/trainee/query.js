@@ -1,6 +1,6 @@
-const resolvers = {
-    Query: {
-        getTrainee(parent, args, context, input);
+const Query = {
+    getTrainee: (parent, args, context) => {
+        return null;
     }
 }
-export default resolvers;
+export default Query;

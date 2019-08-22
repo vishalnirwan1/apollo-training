@@ -1,6 +1,6 @@
-const userResolvers = {
-    Query: {
-        profile(parent, args, context, input);
-    }
-}
-export default userResolvers;
+const Query = {
+    userprofile: (parent, args, context) => {
+        return null;
+    },
+};
+export default Query;

@@ -1,17 +1,17 @@
-import * as express from 'express';
-import { ApolloServer, gql } from 'apollo-server-express';
+import express from 'express';
+import { ApolloServer, makeExecutableSchema } from 'apollo-server-express';
 import { configuration } from './config';
-import {resolvers} from './module/trainee';
-import typeDefs from './module';
-console.log('frrrfrfrfr', resolvers);
+import schema from '.';
+
+console.log('****************', schema);
 const app = express();
-export default class Server {
-  constructor() {
-    
-    const server = new ApolloServer({ typeDefs, resolvers });
-    server.applyMiddleware({ app });
-    app.listen({ port: configuration.port }, () => {
-      console.log('server is ready');
-    });
-  }
-}
+
+const server = new ApolloServer({
+  schema: makeExecutableSchema(schema),
+});
+
+server.applyMiddleware({ app });
+
+app.listen({ port: configuration.port }, () => {
+  console.log('server is ready');
+});

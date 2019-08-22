@@ -1,1 +1,3 @@
-export { default as resolvers } from './query';
+import Query from './query';
+
+export default Query;

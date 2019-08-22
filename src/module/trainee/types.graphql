@@ -1,12 +1,9 @@
-type Data {
-    id: ID,
-    record:[profile]
-}
 type allTrainee {
     status: String
     message: String
-    data: [Data]
+    data: [traineeData]
 }
-type Query {
-    getTrainee: allTrainee
+type traineeData {
+    count: Int,
+    record:[profile]
 }
