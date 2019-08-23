@@ -1,7 +1,7 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
 import { configuration } from '../../config';
 
-class TraineeApi extends RESTDataSource {
+class UserApi extends RESTDataSource {
     constructor() {
 
         super();
@@ -13,9 +13,9 @@ class TraineeApi extends RESTDataSource {
         request.headers.set('Authorization', this.context.authorization);
     }
     
-    async getTrainee() {
-        const result = await this.get('trainee');
+    async profile() {
+        const result = await this.get('user/profile');
         return result;
     }
 }
-export default TraineeApi;
+export default UserApi;

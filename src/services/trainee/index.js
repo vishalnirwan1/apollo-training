@@ -1,1 +1,2 @@
-export { default as TraineeApi } from './trainee';
+import  TraineeApi  from './trainee';
+export default TraineeApi;

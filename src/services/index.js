@@ -1,3 +1,2 @@
-import { TraineeApi } from './trainee';
-
-export default TraineeApi;
+export { default as TraineeApi } from './trainee';
+export { default as UserApi } from './user';

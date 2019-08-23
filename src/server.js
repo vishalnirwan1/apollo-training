@@ -1,22 +1,26 @@
 import express from 'express';
 import { ApolloServer, makeExecutableSchema } from 'apollo-server-express';
 import { configuration } from './config';
-import  Trainee  from './services';
+import { TraineeApi, UserApi }from './services';
 import schema from '.';
 
+// console.log(TraineeApi, '------->>>>>>', UserApi);
 
-// console.log('****************', Trainee);
 const app = express();
 
 const server = new ApolloServer({
   schema: makeExecutableSchema(schema),
   dataSources: () => {
+
     return {
-      traineeApi: new Trainee(),
+      traineeApi: new TraineeApi(),
+      userApi: new UserApi(),
+
     };
   },
+
   context: ({ req }) => {
-    return { authorization: req && req.headers && req.headers.authorization }
+    return { authorization: req.headers.authorization }
   }
 });
 
