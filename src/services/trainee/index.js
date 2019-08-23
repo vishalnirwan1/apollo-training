@@ -1,1 +1,1 @@
-export { default as TraineeApi } from '.';
+export { default as TraineeApi } from './trainee';

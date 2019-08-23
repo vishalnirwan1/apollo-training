@@ -1,34 +1,27 @@
 import express from 'express';
 import { ApolloServer, makeExecutableSchema } from 'apollo-server-express';
 import { configuration } from './config';
-import TraineeApi from './services';
+import  Trainee  from './services';
 import schema from '.';
 
-console.log('****************', schema);
+
+// console.log('****************', Trainee);
 const app = express();
-app.get('/health-check', (req, res) => {
-            res.send('I am Ok');
-        });
 
 const server = new ApolloServer({
   schema: makeExecutableSchema(schema),
   dataSources: () => {
     return {
-      traineeApi : new TraineeApi(),
+      traineeApi: new Trainee(),
     };
   },
-  context: ({ request, connection }) => {
-    if(connection) {
-      return connection.context;
-    }
-    else {
-      return { authorization : request.headers && request.headers.authorization }
-    }
+  context: ({ req }) => {
+    return { authorization: req && req.headers && req.headers.authorization }
   }
 });
 
 server.applyMiddleware({ app });
 
 app.listen({ port: configuration.port }, () => {
-  console.log('server is ready', app);
+  console.log('server is ready');
 });

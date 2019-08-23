@@ -3,13 +3,15 @@ import { configuration } from '../../config';
 class TraineeApi extends RESTDataSource {
     constructor() {
         super();
-        this.baseUrl = configuration.baseUrl;
+        this.baseUrl = configuration.serviceUrl;
+        // console.log('!!!!!!!!!!!!!!!!!!!!!!!!',this.baseUrl);
     }
+
     willSendRequest(request) {
         request.headers.set('Authorization', this.context.authorizarion);
     }
     async getTrainee() {
-        const result = this.get('trainee');
+        const result = await this.get('http://localhost:9000/api/trainee');
         return result;
     }
 }
