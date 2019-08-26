@@ -1,0 +1,9 @@
+type allTrainee {
+    status: String
+    message: String
+    data: [traineeData]
+}
+type traineeData {
+    count: Int,
+    record:[profile]
+}

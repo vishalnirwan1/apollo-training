@@ -1,0 +1,9 @@
+type profile {
+    id: ID
+    createdBy: String
+    UpdatedBy: String
+    password: String
+    email: String
+    name: String
+    role: String
+}
