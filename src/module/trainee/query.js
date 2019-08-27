@@ -1,6 +1,9 @@
 const Query = {
-    getTrainee: (parent, args, context) => {
-        return null;
+    getTrainee: async (parent, args, { dataSources }) => {
+
+        const result = await dataSources.traineeApi.getTrainee();
+        return result;
+        
     }
 }
 export default Query;

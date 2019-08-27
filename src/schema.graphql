@@ -1,4 +1,6 @@
 type Query {
-    userprofile: profile
-    getTrainee: allTrainee
+
+    userProfile: user
+    getTrainee: [allTrainee]
+
 }
