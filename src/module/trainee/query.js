@@ -3,7 +3,7 @@ const Query = {
 
         const result = await dataSources.traineeApi.getTrainee();
         return result;
-        
+
     }
 }
 export default Query;

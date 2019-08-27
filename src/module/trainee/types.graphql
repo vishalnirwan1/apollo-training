@@ -1,13 +1,57 @@
 type allTrainee {
-
     count: Int
     status: String
     message: String
     data: [profile]
-
 }
-type traineeData {
 
-    record:[profile]
-    
+input createInput {
+    name: String
+    password: String
+    email: String
+    role: String
+}
+type createTrainee {
+    data: name
+    message: String
+    status: String
+}
+type name {
+    name: profile
+}
+
+input updateInput {
+    id: String
+    dataToUpdate: dataToUpdate
+}
+input dataToUpdate {
+    name: String
+    email: String
+    password: String
+}
+type traineeUpdate {
+    message: String
+    status: String
+    data: updateData
+}
+type updateData {
+    id: String
+    dataToUpdate: dataUpdated
+}
+type dataUpdated {
+    name: String
+    email: String
+    password: String
+}
+
+input deleteInput {
+    id: String
+}
+type traineeDelete {
+    data: deletedData
+    message: String
+    status: String
+}
+type deletedData {
+    id: String
 }
