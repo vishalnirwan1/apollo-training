@@ -6,18 +6,18 @@ import { traineeSubscription } from './trainee';
 import { userSubscription } from './user';
 
 const resolvers = {
-    Query: {
-        ...UserQuery,
-        ...TraineeQuery,
-    },
-    Mutation: {
-        ...userMutation,
-        ...traineeMutation,
-    },
-    Subscription: {
-        ...traineeSubscription,
-        ...userSubscription
-    }
+  Query: {
+    ...UserQuery,
+    ...TraineeQuery,
+  },
+  Mutation: {
+    ...userMutation,
+    ...traineeMutation,
+  },
+  Subscription: {
+    ...traineeSubscription,
+    ...userSubscription
+  }
 };
 
 export default resolvers;
