@@ -1,2 +1,2 @@
-import  TraineeApi  from './trainee';
+import TraineeApi from './trainee';
 export default TraineeApi;

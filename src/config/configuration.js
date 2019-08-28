@@ -5,8 +5,8 @@ config();
 const enVars = process.env;
 const configuration = Object.freeze({
 
-    serviceUrl: enVars.SERVICE_URL,
-    port: enVars.PORT,
+  serviceUrl: enVars.SERVICE_URL,
+  port: enVars.PORT,
 
 });
 

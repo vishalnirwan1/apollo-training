@@ -8,7 +8,7 @@ type user {
 
 type profile {
 
-    id: ID
+    _id: String
     createdBy: String
     UpdatedBy: String
     email: String
@@ -19,4 +19,17 @@ type profile {
     createdAt: String
     updatedAt: String
 
+}
+
+input requestLogin {
+    email: String
+    password: String
+}
+type loginResponse {
+    data: token
+    message: String
+    status: String
+}
+type token {
+    token: String
 }

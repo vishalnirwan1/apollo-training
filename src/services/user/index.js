@@ -1,2 +1,2 @@
-import  UserApi  from './user';
+import UserApi from './user';
 export default UserApi;
