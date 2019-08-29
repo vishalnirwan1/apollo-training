@@ -22,8 +22,8 @@ type profile {
 }
 
 input requestLogin {
-    email: String
-    password: String
+    email: String!
+    password: String!
 }
 type loginResponse {
     data: token

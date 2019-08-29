@@ -6,23 +6,23 @@ type allTrainee {
 }
 
 input createInput {
-    name: String
-    password: String
-    email: String
+    name: String!
+    password: String!
+    email: String!
     role: String
 }
 type createTrainee {
-    data: name
+    data: details
     message: String
     status: String
 }
-type name {
-    name: profile
+type details {
+    details: profile
 }
 
 input updateInput {
-    id: String
-    dataToUpdate: dataToUpdate
+    id: String!
+    dataToUpdate: dataToUpdate!
 }
 input dataToUpdate {
     name: String
