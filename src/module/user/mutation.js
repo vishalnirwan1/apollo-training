@@ -5,8 +5,9 @@ const userMutation = {
   login: async (parent, args, { dataSources }) => {
     console.log(args);
     const result = await dataSources.userApi.login(args);
-    if (result.message) {
-      new errorHandling(result.message);
+    console.log(result.error);
+    if (result.error) {
+      new errorHandling(result.error);
     }
     pubsub.publish(LOGIN, {
       login: result

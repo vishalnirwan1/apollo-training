@@ -2,18 +2,18 @@ import { AuthenticationError, ForbiddenError, UserInputError, ApolloError } from
 
 class errorHandling {
   constructor(err) {
-    const { error, status } = err;
+    const { message, status } = err;
     if (status === 401) {
-      this.authenticationError(error);
+      this.authenticationError(message);
     }
     else if (status === 403) {
-      this.forbiddenError(error);
+      this.forbiddenError(message);
     }
     else if (status === 400) {
-      this.userInputError(error);
+      this.userInputError(message);
     }
     else {
-      this.apolloError(error);
+      this.apolloError(message);
 
     }
   }

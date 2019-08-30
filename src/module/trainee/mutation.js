@@ -4,8 +4,8 @@ import { errorHandling } from '../../libs'
 const traineeMutation = {
   addTrainee: async (parent, args, { dataSources }) => {
     const result = await dataSources.traineeApi.addTrainee(args);
-    if (result.message) {
-      new errorHandling(result.message);
+    if (result.error) {
+      new errorHandling(result.error);
     }
     pubsub.publish(ADD_TRAINEE, {
       addTrainee: result
@@ -14,8 +14,9 @@ const traineeMutation = {
   },
   updateTrainee: async (parent, args, { dataSources }) => {
     const result = await dataSources.traineeApi.updateTrainee(args);
-    if (result.message) {
-      new errorHandling(result.message);
+    console.log(result)
+    if (result.error) {
+      new errorHandling(result.error);
     }
     pubsub.publish(UPDATE_TRAINEE, {
       updateTrainee: result
@@ -24,8 +25,8 @@ const traineeMutation = {
   },
   deleteTrainee: async (parent, args, { dataSources }) => {
     const result = await dataSources.traineeApi.deleteTrainee(args);
-    if (result.message) {
-      new errorHandling(result.message);
+    if (result.error) {
+      new errorHandling(result.error);
     }
     pubsub.publish(DELETE_TRAINEE, {
       deleteTrainee: result
