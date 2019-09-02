@@ -14,7 +14,6 @@ const traineeMutation = {
   },
   updateTrainee: async (parent, args, { dataSources }) => {
     const result = await dataSources.traineeApi.updateTrainee(args);
-    console.log(result)
     if (result.error) {
       new errorHandling(result.error);
     }
