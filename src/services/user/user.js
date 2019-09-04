@@ -27,4 +27,5 @@ class UserApi extends RESTDataSource {
 
   }
 }
+
 export default UserApi;

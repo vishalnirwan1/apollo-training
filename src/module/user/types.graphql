@@ -12,7 +12,6 @@ type profile {
     createdBy: String
     UpdatedBy: String
     email: String
-    password: String
     name: String
     role: String
     originalId: String
@@ -22,14 +21,20 @@ type profile {
 }
 
 input requestLogin {
+
     email: String!
     password: String!
+
 }
+
 type loginResponse {
+
     data: token
     message: String
     status: String
+
 }
+
 type token {
     token: String
 }

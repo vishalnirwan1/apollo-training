@@ -1,16 +1,24 @@
 import { pubsub, LOGIN } from '../../subscription';
-import { errorHandling } from '../../libs';
+import { ErrorHandling } from '../../libs';
 
 const userMutation = {
   login: async (parent, args, { dataSources }) => {
-    const result = await dataSources.userApi.login(args);
-    if (result.error) {
-      new errorHandling(result.error);
+    try {
+
+      const result = await dataSources.userApi.login(args);
+      if (result.error) {
+        new ErrorHandling(result.error);
+      }
+      pubsub.publish(LOGIN, {
+        login: result
+      });
+      return result;
+
     }
-    pubsub.publish(LOGIN, {
-      login: result
-    });
-    return result;
-  }
-}
+    catch (err) {
+      new ErrorHandling(err);
+    }
+  },
+};
+
 export default userMutation;

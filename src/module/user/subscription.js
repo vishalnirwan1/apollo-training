@@ -5,4 +5,5 @@ const userSubscription = {
     subscribe: () => pubsub.asyncIterator([LOGIN]),
   }
 }
+
 export default userSubscription;

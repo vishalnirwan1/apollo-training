@@ -1,19 +1,18 @@
-import UserQuery from './user';
-import TraineeQuery from './trainee';
-import { userMutation } from './user';
-import { traineeMutation } from './trainee';
-import { traineeSubscription } from './trainee';
-import { userSubscription } from './user';
+import { userQuery, userMutation, userSubscription } from './user';
+import { traineeQuery, traineeMutation, traineeSubscription } from './trainee';
 
 const resolvers = {
+
   Query: {
-    ...UserQuery,
-    ...TraineeQuery,
+    ...userQuery,
+    ...traineeQuery,
   },
+
   Mutation: {
     ...userMutation,
     ...traineeMutation,
   },
+
   Subscription: {
     ...traineeSubscription,
     ...userSubscription

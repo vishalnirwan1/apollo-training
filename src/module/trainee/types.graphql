@@ -1,56 +1,82 @@
 type allTrainee {
+
     count: Int
     status: String
     message: String
     data: [profile]
+
 }
 
 input createInput {
+
     name: String!
     password: String!
     email: String!
+
 }
 type createTrainee {
+
     data: details
     message: String
     status: String
+
 }
 type details {
+
     details: profile
+
 }
 
 input updateInput {
+
     id: String!
     dataToUpdate: dataToUpdate!
+
 }
+
 input dataToUpdate {
+
     name: String
     email: String
     password: String
+
 }
+
 type traineeUpdate {
+
     message: String
     status: String
     data: updateData
+
 }
+
 type updateData {
+
     id: String
     dataToUpdate: dataUpdated
+
 }
+
 type dataUpdated {
+
     name: String
     email: String
     password: String
+
 }
 
 input deleteInput {
     id: String
 }
+
 type traineeDelete {
+
     data: deletedData
     message: String
     status: String
+
 }
+
 type deletedData {
     id: String
 }
