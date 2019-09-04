@@ -1,1 +1,1 @@
-export { default as errorHandling } from './error';
+export { default as ErrorHandling } from './error';

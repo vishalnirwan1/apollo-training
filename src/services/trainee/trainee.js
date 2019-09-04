@@ -19,6 +19,7 @@ class TraineeApi extends RESTDataSource {
     return result;
 
   }
+
   async addTrainee(args) {
 
     const { name, email, password, role } = args.input;
@@ -26,6 +27,7 @@ class TraineeApi extends RESTDataSource {
     return result;
 
   }
+
   async updateTrainee(args) {
 
     const { id, dataToUpdate } = args.input;
@@ -33,6 +35,7 @@ class TraineeApi extends RESTDataSource {
     return result;
 
   }
+
   async deleteTrainee(args) {
 
     const { id } = args.input;
@@ -41,4 +44,5 @@ class TraineeApi extends RESTDataSource {
 
   }
 }
+
 export default TraineeApi;

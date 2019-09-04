@@ -5,7 +5,6 @@ import { createServer } from 'http';
 import { TraineeApi, UserApi } from './services';
 import schema from '.';
 
-
 const app = express();
 
 const server = new ApolloServer({
