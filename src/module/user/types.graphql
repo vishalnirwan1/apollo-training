@@ -1,0 +1,40 @@
+type user {
+
+    status: String
+    message: String
+    data: profile
+
+}
+
+type profile {
+
+    _id: String
+    createdBy: String
+    UpdatedBy: String
+    email: String
+    name: String
+    role: String
+    originalId: String
+    createdAt: String
+    updatedAt: String
+
+}
+
+input requestLogin {
+
+    email: String!
+    password: String!
+
+}
+
+type loginResponse {
+
+    data: token
+    message: String
+    status: String
+
+}
+
+type token {
+    token: String
+}
