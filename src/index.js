@@ -7,5 +7,5 @@ const typeDefs = mergeTypes(typeArray, { all: true });
 
 export default {
   resolvers,
-  typeDefs
+  typeDefs,
 };

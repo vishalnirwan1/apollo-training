@@ -1,19 +1,26 @@
 module.exports = {
-  "env": {
-    "es6": true,
-    "node": true
-  },
-  "extends": "eslint:recommended",
-  "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
-  },
-  "parserOptions": {
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-  "rules": {
-    "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }]
-
-  }
+    "env": {
+        "es6": true,
+        "node": true,
+        "jest": true,
+        "browser": true,
+    },
+    "extends": ["eslint:recommended",
+        'airbnb'
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module"
+    },
+    "rules": {
+        "no-multi-space": 0,
+        "no-new": 0,
+        'no-console': 'off',
+        "import/no-named-as-default": 0,
+    },
+    "parser": "babel-eslint"
 };

@@ -1,7 +1,7 @@
 type Query {
 
     userProfile: user
-    getTrainee: [allTrainee]
+    getTrainee: allTrainee
 
 }
 
@@ -16,9 +16,9 @@ type Mutation {
 
 type Subscription {
 
-    addTrainee: createTrainee
-    updateTrainee: traineeUpdate
-    deleteTrainee: traineeDelete
+    addTrainee: result
+    updateTrainee: resultUpdate
+    deleteTrainee: resultDelete
     login: loginResponse
     
 }

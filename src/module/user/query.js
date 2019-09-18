@@ -9,9 +9,7 @@ const userQuery = {
         new ErrorHandling(result.error);
       }
       return result;
-
-    }
-    catch (err) {
+    } catch (err) {
       new ErrorHandling(err);
     }
   },

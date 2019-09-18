@@ -7,6 +7,7 @@ const configuration = Object.freeze({
 
   serviceUrl: enVars.SERVICE_URL,
   port: enVars.PORT,
+  secretKey: enVars.SECRET_KEY,
 
 });
 
