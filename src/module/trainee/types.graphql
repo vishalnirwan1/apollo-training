@@ -14,6 +14,11 @@ input createInput {
     email: String!
 
 }
+type result {
+
+    result: createTrainee
+}
+
 type createTrainee {
 
     data: details
@@ -42,6 +47,11 @@ input dataToUpdate {
 
 }
 
+type resultUpdate {
+
+    result: traineeUpdate
+}
+
 type traineeUpdate {
 
     message: String
@@ -53,20 +63,17 @@ type traineeUpdate {
 type updateData {
 
     id: String
-    dataToUpdate: dataUpdated
-
-}
-
-type dataUpdated {
-
     name: String
     email: String
     password: String
-
 }
 
 input deleteInput {
     id: String
+}
+type resultDelete {
+
+    result: traineeDelete
 }
 
 type traineeDelete {

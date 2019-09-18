@@ -6,14 +6,11 @@ class ErrorHandling {
 
     if (status === 401) {
       this.authenticationError(message);
-    }
-    else if (status === 403) {
+    } else if (status === 403) {
       this.forbiddenError(message);
-    }
-    else if (status === 400) {
+    } else if (status === 400) {
       this.userInputError(message);
-    }
-    else {
+    } else {
       this.apolloError(message);
     }
   }
